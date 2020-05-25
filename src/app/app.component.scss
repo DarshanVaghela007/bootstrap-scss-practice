@@ -1,0 +1,43 @@
+$before-tab-size-color: #74e760;
+.style {
+  color: $before-tab-size-color;
+}
+$breadcrumb-divider: quote(">");
+
+@media (min-width: 576px) and (max-width: 768px) {
+  $after-tab-size-color: #558899;
+  .style {
+    color: $after-tab-size-color;
+  }
+
+}
+
+
+// mixin example
+@mixin transform($property) {
+  transform: $property;
+}
+
+.rotate-text {
+  @include transform(rotate(180deg));
+}
+
+%shared-error-css {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #e78484;
+}
+
+.message-error {
+  @extend %shared-error-css;
+}
+
+.server-error {
+  @extend %shared-error-css;
+  border-color: green;
+}
+
+.client-error {
+  @extend %shared-error-css;
+  border-color: red;
+}
